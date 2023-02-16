@@ -1,0 +1,270 @@
+:root {
+    --background-color-main: hsl(268, 75%, 9%);
+    --background-color-keypad: hsl(268, 71%, 12%);
+    --background-color-screen: hsl(268, 71%, 12%);
+
+    --background-color-reset-delete-key: hsl(281, 89%, 26%);
+    --background-color-reset-delete-key-hover: hsl(281, 86%, 45%);
+    --background-shadow-reset-delete-key: hsl(285, 91%, 52%);
+
+    --background-color-enter-key: hsl(176, 100%, 44%);
+    --background-color-enter-key-hover: hsl(176, 100%, 51%);
+    --background-shadow-enter-key: hsl(177, 92%, 70%);
+
+    --background-color-main-key: hsl(268, 47%, 21%);
+    --background-color-main-key-hover: hsl(268, 47%, 48%);
+    --background-shadow-main-key: hsl(290, 70%, 36%);
+
+    --text-color-main: hsl(52, 100%, 62%);
+    --text-color-accent: hsl(198, 20%, 13%);
+    --text-color-delete-reset: hsl(0, 0%, 100%); 
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100%;
+    display: flex;
+
+}
+body {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background-color-main);
+    color: var(--text-color-main);
+    font-weight: 700;
+    font-family: "league spartan";
+    @media( max-width: 620px) {
+        align-items: flex-start;
+        margin-top: 2rem;
+    }
+
+}
+
+$block: '.calculator';
+
+#{$block} {
+    // border: 1px solid black;
+    width: 580px;
+    height: 70%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    
+    @media( max-width: 620px) {
+        max-height: 660px;
+        width: 90%;
+        height: 100%;
+    }
+
+    #{$block}__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 122px;   
+        color: var(--text-color-secondary);
+        font-size: 32px;
+    }
+
+    #{$block}__header-slider {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        flex-direction: row;
+        width: 100%;
+
+        &-label {
+            margin-right: 20px;
+            font-size: 15px;
+            text-transform: uppercase;
+            @media( max-width: 620px) {
+                font-size: 13px;
+            }
+        
+        }
+    }
+    #{$block}__header-link-box {
+        display: flex;
+        flex-direction: row;
+        a {
+            text-decoration: none;
+            color: var(--text-color-secondary);
+            padding-left: 5px;
+        }
+    }
+    #{$block}__monitor {
+        background-color: var(--background-color-screen);
+        border-radius: 1rem;
+        // height: 237px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        color: var(--text-color-secondary);
+        @media( max-width: 620px) {
+            height: fit-content;     
+        }
+
+    
+    }
+
+    #{$block}__monitor--result {
+        // background-color: black;
+        margin: 2rem 3rem 1rem 0rem;
+        font-size: 65px;  
+        overflow: hidden;
+        @media( max-width: 620px) {
+            font-size: 40px;
+            margin: 25px 20px;
+        }
+
+    }
+
+    #{$block}__input-container {
+        // border: 1px solid black;
+        display: grid;
+        grid-template-columns: repeat(4, minmax(100px, 1fr));
+        row-gap: 2rem;
+        column-gap: 2rem;
+        width: 100%;
+        height: 100%;
+        margin-top: 2rem;
+        padding: 2rem;
+        background-color: var(--background-color-keypad);
+        border-radius: 1rem;
+        @media( max-width: 620px) {
+            grid-template-columns: repeat(4, minmax(30px, 1fr));
+            // grid-template-rows: repeat(5, minmax(50px, 80px));
+            row-gap: 10px;
+            column-gap: 10px;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            padding: 25px 25px 10px 25px;
+        }
+    
+    }    
+
+    }
+.button{
+    // border: 1px solid blue;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--background-shadow-main-key);
+    border-radius: 8px;
+    font-size: 2.5rem;
+    padding: 0;
+    border: none; 
+    height: 90%;
+
+    @media( max-width: 620px) {
+        font-size: 30px;
+        height: 60px
+    }
+
+
+    &--delete {
+        // border: 1px solid black;
+        background-color: var(--background-shadow-reset-delete-key);
+        color: var(--text-color-delete-reset);
+        text-transform: uppercase;
+        font-size: 2rem;
+    }
+
+    &--reset {
+        grid-column: 1 / 3;
+        background-color: var(--background-shadow-reset-delete-key);
+        color: var(--text-color-delete-reset);
+        text-transform: uppercase;
+        font-size: 2rem;
+        @media( max-width: 620px) {
+            height: 60px;
+        }
+    
+    } 
+
+    &--enter {
+        grid-column: 3 / 5;
+        background-color: var(--background-shadow-enter-key);
+        color: var(--text-color-accent);
+    }
+
+    &__face {
+
+        background-color: var(--background-color-main-key);
+        border-radius: 8px;
+        padding: 10px 41px;
+        transform: translateY(-5px);
+        // 5px verschil
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        @media( max-width: 620px) {
+            padding: 21px 15px 13px 15px;
+            margin: 0;
+        }
+    
+        &:hover { 
+            background-color: var(--background-color-main-key-hover);
+        }
+
+
+        &:active {
+            transform: translateY(2px);
+        }
+
+        &--delete {
+            background-color: var(--background-color-reset-delete-key);
+            padding: 14px 41px;
+            &:hover {
+                background-color: var(--background-color-reset-delete-key-hover);
+            }
+
+            @media( max-width: 620px) {
+                font-size: 20px;
+                padding: 21px 10px 22px 10px;
+            }
+    
+        }
+        
+        &--reset {
+            background-color: var(--background-color-reset-delete-key);
+            padding: 18px 41px;
+            @media( max-width: 620px) {
+                font-size: 20px;
+                padding: 23px 13px 18px 13px;
+            }
+
+            &:hover { 
+                background-color: var(--background-color-reset-delete-key-hover);
+            }
+        }
+
+        &--enter {
+            background-color: var(--background-color-enter-key); 
+            padding: 14px 41px;
+            @media( max-width: 620px) {
+                font-size: 20px;
+                padding: 23px 13px 18px 13px;
+            }
+
+
+            &:hover {
+                background-color: var(--background-color-enter-key-hover);
+            }
+
+        }
+
+    }
+
+}
+

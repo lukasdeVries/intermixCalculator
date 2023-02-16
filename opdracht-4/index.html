@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="nl" class="theme-a">
+    <!-- theme-b 
+         theme-c -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opdracht 4</title>
+    <link rel="stylesheet" href="./includes/styleA.css">
+    <script src="./calculator.js"></script>
+</head>
+<body>
+    <div class="calculator">
+        <div class="calculator__header">
+            <h5>calc</h5>
+            <div class="calculator__header-slider">
+                <div class="calculator__header-slider-label">
+                    <p >Theme</p>
+                </div>
+                <div class="toggle">
+                    <div class="toggle__number-wrapper">
+                        <p  class="toggle__number">1</p>
+                        <p  class="toggle__number">2</p>
+                        <p  class="toggle__number">3</p>
+                    </div>
+                    <div class="toggle__wrapper">
+                        <input type="radio" class="toggle__button" data-theme="a" id="a"/>
+                        <input type="radio" class="toggle__button" data-theme="b" id="b"/>
+                        <input type="radio" class="toggle__button" data-theme="c" id="c"/>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <div class="calculator__monitor">
+            <p class="calculator__monitor--result"></p>
+        </div>
+        <div class="calculator__input-container">
+            <div class="button">
+                <button class="button__face" data-number="7" >7</button>
+            </div>
+            <!-- id="calculator-button-7" -->
+            <div class="button">
+                <button class="button__face" data-number="8">8</button>
+            </div>
+            <div class="button">
+                <button class="button__face" data-number="9">9</button>
+            </div>
+            <div class="button button--delete">
+                <button class="button__face button__face--delete" id="delete">del</button>
+                </div>
+            <div class="button">
+                <button class="button__face" data-number="4">4</button>
+            </div>
+            <div class="button">
+                <button class="button__face" data-number="5">5</button>
+            </div>
+            <div class="button">
+                <button class="button__face" data-number="6">6</button>
+            </div>
+            <div class="button">
+                <button class="button__face" data-operator="+">+</button>
+            </div>
+            <div class="button">
+                <button class="button__face" data-number="1">1</button>
+            </div>
+            <div class="button">
+                <button class="button__face" data-number="2">2</button>
+            </div>
+            <div class="button">
+                <button class="button__face" data-number="3">3</button>
+            </div>
+            <div class="button">
+                <button class="button__face" data-operator="-">-</button>
+            </div>
+            <div class="button">
+                <button class="button__face" data-number=".">.</button>
+            </div>
+            <div class="button">
+                <button class="button__face" data-number="0">0</button>
+            </div>
+            <div class="button">
+                <button class="button__face" data-operator="/">/</button>
+            </div>
+            <div class="button">
+                <button class="button__face" data-operator="*">x</button>
+            </div>
+            <div class="button button--reset">
+                <button class="button__face button__face--reset" id="reset">reset</button>
+                </div>
+            <div class="button button--enter">
+                <button class="button__face button__face--enter" id="enter">=</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
